@@ -1,0 +1,20 @@
+body{
+    background-image: url("../images/trainwallpaper.jpg");
+    background-repeat: repeat;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.jumbotron{
+    margin-top: 3%;
+    background-color: #9cab95;
+    color: white; 
+}
+
+.card-header{
+    background-color: #9cab95;
+    color: white; 
+}
+
+.card{
+    margin-bottom: 3%;
+}
