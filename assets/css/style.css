@@ -18,3 +18,7 @@ body{
 .card{
     margin-bottom: 3%;
 }
+
+table thead th{
+    border-bottom: 1px solid #9cab95;
+}
