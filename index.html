@@ -24,12 +24,21 @@
                         <strong>Current Train Schedule</strong>
                     </div>
                     <div class="card-body" id="schedule-section">
+                        <table id="trainTable" width="100%">
+                            <tr>
+                                <th>Train Name</th>
+                                <th>Destination</th>
+                                <th>Next Arrival</th>
+                                <th>Frequency (minutes)</th>
+                                <th>Minutes Away</th>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
 
-<!-- This card is for the conductors adding times! -->
+        <!-- This card is for the conductors adding times! -->
         <div class="row">
             <div class="col-sm-12">
                 <br>
@@ -41,19 +50,19 @@
                     <div class="card-body">
                         <form>
                             <div class="form-group">
-                                <label for="nameOfNewTrain">Train Name</label>
+                                <label for="newTrain">Train Name</label>
                                 <input type="text" class="form-control" id="newTrain">
                             </div>
                             <div class="form-group">
-                                <label for="newTrainDestination">Destination</label>
+                                <label for="newDestination">Destination</label>
                                 <input type="text" class="form-control" id="newDestination">
                             </div>
                             <div class="form-group">
-                                <label for="newTrainTime">First Train Time (HH:mm--Military Time) </label>
+                                <label for="newTime">First Train Time (HH:mm--Military Time) </label>
                                 <input type="text" class="form-control" id="newTime">
                             </div>
                             <div class="form-group">
-                                <label for="newTrainFrequency">Frequency (minutes)</label>
+                                <label for="newFrequency">Frequency (minutes)</label>
                                 <input type="text" class="form-control" id="newFrequency">
                             </div>
                             <button type="submit" id="submitBtn" class="btn btn-secondary">Submit</button>
@@ -70,6 +79,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-
-    <script src="./assets/javascript/moment.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="./assets/javascript/app.js"></script>
 </body>
