@@ -24,7 +24,8 @@ $("#submitBtn").on("click", function (event) {
     time = $("#newTime").val().trim();
     frequency = $("#newFrequency").val();
 
-    database.ref().push({
+
+    database.ref(destination).set({
         name: name,
         destination: destination,
         time: time,
@@ -49,11 +50,14 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
     var upcomingTrain = $("<td>").text(timeMinsAway);
     var trainTime = $("<td>").text(prettyTime);
 
-    //Creates the new button for removing the train 
+    //Creates the new button for removing the train
+    // console.log() 
     var newButton = $("<button>")
         .addClass("btn")
         .addClass("btn-secondary")
         .addClass("removeTrain")
+        .addClass(trainName)
+        .attr("id", childSnapshot.val().destination)
         .text("x");
     var buttonCell = $("<td>").html(newButton)
 
@@ -68,6 +72,10 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
 });
 
 //Removes from the page...but not the database...needs work
-$("body").on("click", ".removeTrain", function () {
+$("body").on("click", ".removeTrain", function (e) {
+    console.log(e);
     $(this).closest("tr").remove();
+    var removeMe = e.target.id;
+    console.log(removeMe);
+    database.ref().child(removeMe).remove();
 })
